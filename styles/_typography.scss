@@ -1,0 +1,38 @@
+body {
+      font-size: 62.5%;
+}
+
+
+h1 {
+    @include fontSize(52);
+    margin: 0;
+    color: $pink;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+.paragraph {
+    font-size: 20px;
+    line-height: 1.4;
+    border: solid 1px $pink;
+    @include colors($pink, $white);
+    &--large,
+    &--small {
+        color: $grey;
+    }
+    &--large {
+     
+        font-size: 26px;
+    }
+    &--small {
+        font-weight: lighter;
+        line-height: 1.6;
+        font-size: 12px;
+    }
+}
