@@ -1,25 +1,27 @@
 .header {
   height: 100vh;
   display: grid;
-  grid-template-columns: 5fr minmax(150px, 32fr) 37fr 21fr 5fr;
+  grid-template-columns: 5fr minmax(101px, 32fr) 37fr 21fr 5fr;
   grid-template-rows: 200px 1fr;
   grid-gap: 1rem;
   grid-template-areas:
     ". logo nav config ."
     ". title slider slider slider";
   @media (max-width: 700px) {
+    grid-template-rows: 100px 100px 1fr;
     grid-template-areas:
       ". logo config config ."
-      ". nav nav nav .";
+      ". nav nav nav ."
+      ". title slider slider slider";
   }
 
   &__logo {
-    background: red;
+    align-self: center;
     grid-area: logo;
   }
 
   &__nav {
-    background: green;
+    align-self: center;
     grid-area: nav;
 
     & ul {
@@ -34,7 +36,7 @@
   }
 
   &__config {
-    background: orange;
+    align-self: center;
     grid-area: config;
     display: flex;
     flex-flow: row nowrap;
@@ -42,6 +44,7 @@
 
     &__lang {
       flex-basis: 1;
+      border: 1px red solid;
       & ul {
         display: none;
       }
