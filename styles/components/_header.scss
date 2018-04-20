@@ -1,40 +1,81 @@
-header {
+.header {
   height: 100vh;
   display: grid;
-  grid-template-rows: 200px auto;
+  grid-template-columns: 5fr minmax(150px, 32fr) 37fr 21fr 5fr;
+  grid-template-rows: 200px 1fr;
+  grid-gap: 1rem;
+  grid-template-areas:
+    ". logo nav config ."
+    ". title slider slider slider";
+  @media (max-width: 700px) {
+    grid-template-areas:
+      ". logo config config ."
+      ". nav nav nav .";
+  }
 
-  .header-top {
+  &__logo {
     background: red;
-    display: grid;
-    grid-template-columns: 5% 1fr 1fr 1fr 5%;
-    grid-template-areas: ". logo nav config .";
+    grid-area: logo;
+  }
 
-    &-logo {
-      grid-area: logo;
+  &__nav {
+    background: green;
+    grid-area: nav;
+
+    & ul {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding: 0;
+      & li {
+        display: inline-block;
+      }
     }
+  }
 
-    &-nav {
-      grid-area: nav;
+  &__config {
+    background: orange;
+    grid-area: config;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    &__lang {
+      flex-basis: 1;
       & ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
+        display: none;
       }
     }
 
-    &-config {
-      grid-area: config;
-    }
-  }
+    &__utilities {
+      flex-basis: 100px;
+      border: 1px red solid;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-self: center;
+      padding: 0;
 
-  .header-bottom {
-    display: flex;
-    flex-flow: row wrap;
-    &-title {
-      background: green;
-    }
-    &-slider {
-      background: url(../images/main-image-1.png);
+      & li {
+        display: inline-block;
+      }
     }
   }
+  &__title {
+    grid-area: title;
+    flex-basis: 1;
+    background: lime;
+  }
+  &__slider {
+    grid-area: slider;
+    flex-basis: 2;
+    background: url(../images/main-image-1.png);
+    background-size: cover;
+  }
+  // .header__bottom {
+  //   width: 100%;
+  //   display: flex;
+  //   flex-flow: row wrap;
+
+  // }
 }
