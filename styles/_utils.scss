@@ -1,25 +1,29 @@
-$pink: #d81b60;
-$grey: #aeb1b9;
+$primary: #333333;
+$contrast: #d4bd53;
 $black: #000f20;
 $white: #ffffff;
 
 @mixin colors($background, $color) {
-    background: $background;
-    color: $color;
+  background: $background;
+  color: $color;
 }
 
 @mixin fontSize($sizeValue) {
-    font-size: $sizeValue  * 1px;
-    font-size: $sizeValue/10 * 1rem;
+  font-size: $sizeValue * 1px;
+  font-size: $sizeValue/10 * 1rem;
 }
 
 @mixin position($top, $right, $bottom, $left) {
-    position: absolute;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 // div {
 //     @include position(4px, 5px, 0, 0)
 // }
+
+.nowrap {
+  white-space: nowrap;
+}

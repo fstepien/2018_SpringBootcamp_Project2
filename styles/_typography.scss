@@ -1,38 +1,52 @@
-body {
-      font-size: 62.5%;
+* {
+  font-size: 62.5%;
 }
-
-
+body {
+  font-family: "Roboto", sans-serif;
+}
 h1 {
-    @include fontSize(52);
-    margin: 0;
-    color: $pink;
+  font-family: Montserrat;
+}
+h1 {
+  @include fontSize(80);
+  margin: 0;
+  color: $primary;
+  z-index: 10;
+  position: relative;
 }
 
 h2 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 h3 {
-    font-size: 26px;
+  font-size: 26px;
 }
 
-.paragraph {
-    font-size: 20px;
-    line-height: 1.4;
-    border: solid 1px $pink;
-    @include colors($pink, $white);
-    &--large,
-    &--small {
-        color: $grey;
-    }
-    &--large {
-     
-        font-size: 26px;
-    }
-    &--small {
-        font-weight: lighter;
-        line-height: 1.6;
-        font-size: 12px;
-    }
+p {
+  @include fontSize(16);
+  color: #888888;
+  font-weight: 400;
 }
+.header__config__lang span,
+.header__config__lang svg {
+  @extend p;
+}
+//  {
+//   font-size: 20px;
+//   line-height: 1.4;
+//   border: solid 1px $pink;
+//   @include colors($pink, $white);
+//   &--large,
+//   &--small {
+//     color: $grey;
+//   }
+//   &--large {
+//     font-size: 26px;
+//   }
+//   &--small {
+//     font-weight: lighter;
+//     line-height: 1.6;
+//     font-size: 12px;
+//   }
+// }

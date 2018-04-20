@@ -1,9 +1,9 @@
 .header {
   height: 100vh;
   display: grid;
-  grid-template-columns: 5fr minmax(101px, 32fr) 37fr 21fr 5fr;
+  grid-template-columns: 5fr minmax(240px, 32fr) 45fr 13fr 5fr;
   grid-template-rows: 200px 1fr;
-  grid-gap: 1rem;
+  grid-column-gap: 5.6rem;
   grid-template-areas:
     ". logo nav config ."
     ". title slider slider slider";
@@ -31,6 +31,17 @@
       padding: 0;
       & li {
         display: inline-block;
+        @include fontSize(22);
+        color: #333333;
+        & a {
+          text-decoration: none;
+
+          @extend li;
+          &.active {
+            color: #888888;
+            border-bottom: 2px solid $contrast;
+          }
+        }
       }
     }
   }
@@ -44,7 +55,7 @@
 
     &__lang {
       flex-basis: 1;
-      border: 1px red solid;
+
       & ul {
         display: none;
       }
@@ -52,7 +63,6 @@
 
     &__utilities {
       flex-basis: 100px;
-      border: 1px red solid;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
@@ -66,9 +76,23 @@
   }
   &__title {
     grid-area: title;
-    flex-basis: 1;
-    background: lime;
+    display: flex;
+    justify-content: flex-start;
+
+    &__spacer {
+      flex-basis: 160px;
+      flex-shrink: 2;
+    }
+    &__wrap {
+      max-width: 407px;
+      flex-basis: minmax(240px 1fr);
+      transition: 0.5s;
+      // @media (max-width: 1496px) {
+      //   max-width: 300px;
+      // }
+    }
   }
+
   &__slider {
     grid-area: slider;
     flex-basis: 2;
