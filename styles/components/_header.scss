@@ -61,6 +61,16 @@
           }
         }
       }
+      & .shop-dropdown {
+        border: 1px solid red;
+        display: none;
+      }
+      & input[id="shop-toggle"] {
+        display: none;
+      }
+      & input[id="shop-toggle"]:checked + .shop-dropdown {
+        display: block;
+      }
     }
   }
 
