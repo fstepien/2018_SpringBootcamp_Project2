@@ -1,5 +1,6 @@
 .header {
   height: 100vh;
+  // height: calc(100vh + 60px);
   display: grid;
   grid-template-columns: 5fr minmax(240px, 32fr) 45fr 13fr 5fr;
   grid-template-rows: 200px 1fr;
@@ -7,12 +8,26 @@
   grid-template-areas:
     ". logo nav config ."
     ". title slider slider slider";
-  @media (max-width: 700px) {
+  @media (max-width: 1175px) {
     grid-template-rows: 100px 100px 1fr;
     grid-template-areas:
       ". logo config config ."
       ". nav nav nav ."
       ". title slider slider slider";
+  }
+  @media (max-width: 560px) {
+    grid-template-rows: 100px 100px 1fr 1fr;
+    grid-template-areas:
+      ". logo logo logo ."
+      ". config config  config."
+      ". title title title ."
+      " . slider slider slider .";
+    &__nav {
+      display: none;
+    }
+    &__config {
+      justify-content: flex-end;
+    }
   }
 
   &__logo {
@@ -29,13 +44,16 @@
       flex-flow: row wrap;
       justify-content: space-between;
       padding: 0;
-      & li {
+      & li,
+      & li label {
         display: inline-block;
         @include fontSize(22);
         color: #333333;
+        &:not(:first-child):not(:last-child) {
+          margin: 0 1rem;
+        }
         & a {
           text-decoration: none;
-
           @extend li;
           &.active {
             color: #888888;
@@ -51,10 +69,15 @@
     grid-area: config;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     &__lang {
-      flex-basis: 1;
+      display: flex;
+      align-self: center;
+      flex-flow: row nowrap;
+      flex-basis: 75px;
+      justify-content: space-between;
+      margin-right: 1.5rem;
 
       & ul {
         display: none;
@@ -71,6 +94,9 @@
 
       & li {
         display: inline-block;
+        &:nth-child(2) {
+          margin: 0 1rem;
+        }
       }
     }
   }
@@ -80,6 +106,7 @@
     justify-content: flex-start;
 
     &__spacer {
+      // fixed spacer to create an 160px offset between wrapper edge and title && prevent the __wrap from overlowing from __title, shrink to create a responsive collapse.
       flex-basis: 160px;
       flex-shrink: 2;
     }
@@ -87,9 +114,56 @@
       max-width: 407px;
       flex-basis: minmax(240px 1fr);
       transition: 0.5s;
-      // @media (max-width: 1496px) {
-      //   max-width: 300px;
-      // }
+
+      & h2 {
+        margin: 0 0 10rem 0;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -1rem;
+          border-bottom: solid 2px grey;
+          width: 20%;
+        }
+      }
+      & h3 {
+        margin: 0;
+      }
+      @media (max-width: 1360px) {
+        & h3 {
+          width: 300px;
+        }
+      }
+
+      &__view-more {
+        position: relative;
+        & span {
+          height: 360px;
+          color: rgba(170, 170, 170, 0.219608);
+          @include fontSize(500);
+          letter-spacing: -53px;
+          line-height: 362px;
+          position: relative;
+          top: 0;
+          left: -24px;
+          display: flex;
+        }
+        & a {
+          color: white;
+          background: $contrast;
+          @include fontSize(18);
+          padding: 0.8rem 2.7rem;
+          line-height: 1.5;
+          line-height: 1.5;
+          display: inline-block;
+          border-radius: 20px;
+          text-decoration: none;
+          position: absolute;
+          letter-spacing: normal;
+          top: 5rem;
+        }
+      }
     }
   }
 

@@ -1,0 +1,68 @@
+.body {
+  .body-wrap {
+    position: relative;
+    transition: top 0.3s ease;
+  }
+  & label[for="nav-drop-toggle"] {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    color: white;
+    background: black;
+    border: 3px white solid;
+    width: 40px;
+    height: 40px;
+    z-index: 200;
+    font-size: 3rem;
+    display: none;
+    text-align: center;
+    border-radius: 5px;
+    @media (max-width: 560px) {
+      display: block;
+    }
+  }
+
+  & input[id="nav-drop-toggle"] {
+    display: none;
+  }
+  & input[id="nav-drop-toggle"]:checked + .nav-drop {
+    top: 0;
+  }
+  & input[id="nav-drop-toggle"]:checked + .nav-drop + .body-wrap {
+    top: 200px;
+    transition: top 0.3s ease;
+  }
+  & .nav-drop {
+    position: fixed;
+    top: -200px;
+    right: 0;
+    left: 0;
+    height: 200px;
+    background: black;
+    transition: top 0.3s ease;
+    z-index: 100;
+    &__close {
+      position: relative;
+      top: 30px;
+      right: 5%;
+      color: white;
+      z-index: 100;
+      font-size: 3rem;
+    }
+    &__list {
+      color: white;
+      list-style: none;
+      padding-left: 20px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      text-align: center;
+      & a,
+      & span {
+        @include fontSize(30);
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
