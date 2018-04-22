@@ -39,13 +39,16 @@
     align-self: center;
     grid-area: nav;
 
-    & ul {
+    &__list {
+      height: 100%;
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       padding: 0;
+
       & li,
       & li label {
+        align-self: center;
         display: inline-block;
         @include fontSize(22);
         color: #333333;
@@ -61,14 +64,46 @@
           }
         }
       }
-      & .shop-dropdown {
-        border: 1px solid red;
-        display: none;
+      &__shop {
+        padding: 100px 0;
+        &__dropdown {
+          position: absolute;
+          top: 200px;
+          right: 0;
+          left: 0;
+          background: white;
+          z-index: 50;
+          height: 317px;
+          display: none;
+          &__wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            height: 100%;
+            &__item {
+              border: red solid 1px;
+              flex-basis: 1fr;
+              min-width: 100px;
+            }
+          }
+          & .close-shop-toggle {
+            color: $secondary;
+            position: absolute;
+            right: calc(5% + 20px);
+            top: 0;
+          }
+        }
+
+        // &:hover > .header__nav__list__shop__dropdown {
+        //   transition: display 0.5s ease;
+        //   display: block;
+        // }
       }
+
       & input[id="shop-toggle"] {
         display: none;
       }
-      & input[id="shop-toggle"]:checked + .shop-dropdown {
+      & input[id="shop-toggle"]:checked + .header__nav__list__shop__dropdown {
         display: block;
       }
     }
@@ -88,9 +123,36 @@
       flex-basis: 75px;
       justify-content: space-between;
       margin-right: 1.5rem;
+      position: relative;
 
       & ul {
+        position: absolute;
+        top: 2rem;
+        left: -2rem;
+        background: white;
+        z-index: 50;
         display: none;
+        padding: 0;
+        list-style: none;
+        width: calc(100% + 4rem);
+        padding: 2rem;
+        & li {
+          display: flex;
+          align-self: center;
+          flex-flow: row nowrap;
+          flex-basis: 75px;
+          justify-content: space-between;
+          padding-bottom: 1rem;
+          & img {
+            width: 24px;
+            height: 19px;
+          }
+        }
+      }
+
+      &:hover > ul {
+        transition: display 0.5s ease;
+        display: block;
       }
     }
 
