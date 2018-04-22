@@ -1,0 +1,85 @@
+.collections {
+  padding-top: 160px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  transition: padding 1s ease;
+
+  &__item {
+    flex-basis: 1fr;
+    position: relative;
+    outline: white 5px solid;
+    &:nth-of-type(n + 2) {
+      margin-left: 60px;
+    }
+    &:hover {
+      outline-offset: -30px;
+      transition: 0.5s;
+    }
+    &__tag {
+      color: #333333;
+      @include fontSize(16);
+      position: absolute;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+      left: -3rem;
+      bottom: 50%;
+      transition: bottom 0.3s ease;
+      &:before {
+        content: "";
+        position: absolute;
+        left: -40px;
+        bottom: 10px;
+        border-bottom: solid 1px grey;
+        width: 20px;
+      }
+      @media (min-width: 560px) and (max-width: 1000px) {
+        bottom: 10%;
+        &:before {
+          display: none !important;
+        }
+      }
+    }
+
+    &__title {
+      position: absolute;
+      font-weight: 700;
+      line-height: 28px;
+      overflow: hidden;
+      color: #333;
+      background: white;
+      padding: 3px;
+      left: -55px;
+      transition: left 1s ease;
+      transition: font-size 1s ease;
+      @media (max-width: 840px) {
+        font-size: 20px;
+      }
+      &:first-of-type {
+        top: 60%;
+      }
+      &:nth-of-type(2) {
+        top: calc(60% + 40px);
+      }
+    }
+    &__img {
+      max-width: 100%;
+    }
+    @media (max-width: 1000px) {
+      margin-left: 30px;
+      &__title {
+        left: -25px;
+      }
+    }
+  }
+  @media (max-width: 720px) {
+    padding-top: 60px;
+  }
+  @media (max-width: 560px) {
+    flex-flow: row wrap;
+    &__item {
+      margin-left: 30px !important;
+      margin-bottom: 15px;
+    }
+  }
+}

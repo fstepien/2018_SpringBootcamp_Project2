@@ -59,12 +59,6 @@
         &__view-more span {
           display: none !important;
         }
-        a:hover {
-          border: 1px solid $contrast;
-          color: $contrast;
-          background: white;
-          transition: 0.2s;
-        }
       }
     }
     &__slider {
@@ -400,10 +394,15 @@
         & a {
           color: white;
           background: $contrast;
-
           position: absolute;
           letter-spacing: normal;
           top: 5rem;
+          &:hover {
+            color: $contrast;
+            background: hsla(0, 0%, 100%, 0.685);
+            border: solid 2px $contrast;
+            transition: 0.3s;
+          }
         }
       }
     }
