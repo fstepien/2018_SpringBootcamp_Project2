@@ -15,11 +15,13 @@
       ". nav nav nav ."
       ". title slider slider slider";
   }
-  @media (max-width: 560px) {
-    grid-template-rows: 100px 100px 1fr 1fr;
+  @media (max-width: 720px) {
+    grid-template-columns: 5fr minmax(200px, 32fr) 45fr 13fr 5fr;
+
+    grid-template-rows: 100px 100px 1fr minmax(200px, 2fr);
     grid-template-areas:
       ". logo logo logo ."
-      ". nav config  config."
+      ". nav config  config ."
       ". title title title ."
       " . slider slider slider .";
     &__nav {
@@ -35,7 +37,61 @@
     &__config {
       justify-content: flex-end;
     }
+    &__title {
+      grid-area: title;
+      display: flex;
+      justify-content: flex-start;
+
+      &__spacer {
+        display: none;
+      }
+      &__wrap {
+        flex-basis: 1fr;
+        & h1 {
+          @include fontSize(35);
+        }
+        & h2 {
+          display: none;
+        }
+        & h3 {
+          @include fontSize(18);
+        }
+        &__view-more span {
+          display: none !important;
+        }
+        a:hover {
+          border: 1px solid $contrast;
+          color: $contrast;
+          background: white;
+          transition: 0.2s;
+        }
+      }
+    }
+    &__slider {
+      flex-shrink: 2;
+    }
   }
+  // @media (max-width: 560px) {
+  //   grid-template-rows: 100px 100px 1fr 1fr;
+  //   grid-template-areas:
+  //     ". logo logo logo ."
+  //     ". nav config  config ."
+  //     ". title title title ."
+  //     " . slider slider slider .";
+  // &__nav {
+  //   // position: relative;
+  //   // left: -200%;
+  //   & > ul > li:not(:nth-of-type(2)) {
+  //     display: none;
+  //   }
+  //   & .header__nav__list__shop__dropdown {
+  //     height: 600px;
+  //   }
+  // }
+  // &__config {
+  //   justify-content: flex-end;
+  // }
+  // }
 
   &__logo {
     align-self: center;
@@ -236,24 +292,58 @@
       }
       &__search {
         & div {
-          display: block !important;
+          // display: block !important;
           right: calc(100% - 25px);
           width: 442px;
           padding: 4rem;
           & input[type="search"] {
             width: 100%;
             border: rgb(231, 231, 231) 1px solid;
+            padding: 1rem;
+            @include fontSize(16);
+          }
+          & input[type="submit"] {
+            background: $contrast;
+            color: white;
+            margin-top: 3rem;
           }
         }
       }
       &__account {
         & div {
+          // display: block !important;
           right: calc(0% + 3rem);
+          width: 442px;
+          padding: 4rem;
+          & ul {
+            padding: 0;
+            & li {
+              margin: 1rem 0 0 0 !important;
+            }
+          }
         }
       }
       &__bag {
         & div {
+          // display: block !important;
+          width: 442px;
+          padding: 4rem;
           right: calc(0%);
+          & a {
+            color: white;
+            background: #333;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+            &:hover {
+              background: $contrast;
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+      @media (max-width: 460px) {
+        & div {
+          max-width: 330px;
         }
       }
     }
@@ -270,7 +360,7 @@
     }
     &__wrap {
       max-width: 407px;
-      flex-basis: minmax(240px 1fr);
+      flex-basis: minmax(240px, 1fr);
       transition: 0.5s;
 
       & h2 {
@@ -324,6 +414,29 @@
     flex-basis: 2;
     background: url(../images/main-image-1.png);
     background-size: cover;
+    position: relative;
+    &__action {
+      background: white;
+      width: 87px;
+      height: 79px;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      & p {
+        position: relative;
+        top: calc(50% - 20px);
+      }
+      &:hover p {
+        color: $contrast;
+        transform: scale(1.2);
+      }
+      &--previous {
+        right: 87px;
+      }
+      &--next {
+        right: 0;
+      }
+    }
   }
   // .header__bottom {
   //   width: 100%;

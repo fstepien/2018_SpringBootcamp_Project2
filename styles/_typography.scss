@@ -42,15 +42,23 @@ p {
   @include fontSize(16);
   color: #888888;
   font-weight: 400;
+  & .currency {
+    color: #333333;
+    @include fontSize(18);
+  }
 }
 .header__config__lang span,
 .header__config__lang svg,
-.header__config__utilities div {
+.header__config__utilities div,
+.header__config__utilities div li {
   @include fontSize(16);
   @extend p;
   @extend h5;
 }
-
+.contrast {
+  color: $contrast;
+  font-size: inherit;
+}
 //  {
 //   font-size: 20px;
 //   line-height: 1.4;
