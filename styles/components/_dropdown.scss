@@ -3,6 +3,7 @@
     position: relative;
     transition: top 0.3s ease;
   }
+
   & label[for="nav-drop-toggle"] {
     position: fixed;
     top: 30px;
@@ -25,12 +26,14 @@
   & input[id="nav-drop-toggle"] {
     display: none;
   }
-  & input[id="nav-drop-toggle"]:checked + .nav-drop {
-    top: 0;
-  }
-  & input[id="nav-drop-toggle"]:checked + .nav-drop + .body-wrap {
-    top: 200px;
-    transition: top 0.3s ease;
+  @media (max-width: 560px) {
+    & input[id="nav-drop-toggle"]:checked + .nav-drop {
+      top: 0;
+    }
+    & input[id="nav-drop-toggle"]:checked + .nav-drop + .body-wrap {
+      top: 200px;
+      transition: top 0.3s ease;
+    }
   }
   & .nav-drop {
     position: fixed;

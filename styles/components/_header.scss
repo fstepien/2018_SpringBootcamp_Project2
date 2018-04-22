@@ -19,11 +19,18 @@
     grid-template-rows: 100px 100px 1fr 1fr;
     grid-template-areas:
       ". logo logo logo ."
-      ". config config  config."
+      ". nav config  config."
       ". title title title ."
       " . slider slider slider .";
     &__nav {
-      display: none;
+      // position: relative;
+      // left: -200%;
+      & > ul > li:not(:nth-of-type(2)) {
+        display: none;
+      }
+      & .header__nav__list__shop__dropdown {
+        height: 600px;
+      }
     }
     &__config {
       justify-content: flex-end;
@@ -52,6 +59,7 @@
         display: inline-block;
         @include fontSize(22);
         color: #333333;
+        cursor: pointer;
         &:not(:first-child):not(:last-child) {
           margin: 0 1rem;
         }
@@ -68,13 +76,13 @@
         padding: 100px 0;
         &__dropdown {
           position: absolute;
-          top: 200px;
-          right: 0;
-          left: 0;
+          top: 200px !important;
+          right: 0 !important;
+          left: 0 !important;
           background: white;
           z-index: 50;
           height: 317px;
-          // display: none;
+          display: none;
 
           &__wrapper {
             display: flex;
@@ -82,29 +90,46 @@
             justify-content: space-between;
             height: 100%;
             &__item {
-              border: red solid 1px;
               flex-basis: 1fr;
-              min-width: 100px;
+              min-width: 240px;
+              height: 100px;
               &__title {
                 @include fontSize(24);
                 color: #333333;
                 transform: rotate(-90deg);
                 transform-origin: right top 0;
-                border: purple solid 1px;
                 position: relative;
                 left: -100%;
+                display: block;
                 text-align: end;
+                height: 3rem;
               }
               & ul {
+                display: block;
                 position: relative;
-                top: 0;
+                top: -5rem;
                 padding: 0;
                 & li {
                   margin: 0 !important;
                   padding-left: 75px;
                   display: block;
+                  & p {
+                    // margin: 0;
+                  }
+                }
+                @media (max-width: 1618px) {
+                  top: -3rem;
+                  & li {
+                    & p {
+                      margin: 0;
+                    }
+                  }
                 }
               }
+            }
+            @media (max-width: 840px) {
+              width: 90%;
+              justify-content: center;
             }
           }
           & .close-shop-toggle {
@@ -112,6 +137,7 @@
             position: absolute;
             right: calc(5% + 20px);
             top: 0;
+            cursor: pointer;
           }
         }
 
@@ -125,7 +151,7 @@
         display: none;
       }
       & input[id="shop-toggle"]:checked + .header__nav__list__shop__dropdown {
-        display: block;
+        display: block !important;
       }
     }
   }
