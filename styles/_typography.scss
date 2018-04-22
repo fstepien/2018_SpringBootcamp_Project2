@@ -4,11 +4,14 @@
 body {
   font-family: "Roboto", sans-serif;
 }
-h1 {
+h1,
+h2,
+.header__title__wrap__view-more span,
+.header__nav__list__shop__dropdown__wrapper__item span {
   font-family: Montserrat;
 }
 h1 {
-  @include fontSize(80);
+  @include fontSize(75);
   margin: 0;
   color: $primary;
   z-index: 10;
@@ -16,22 +19,38 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  @include fontSize(30);
 }
 
 h3 {
   font-size: 26px;
+  font-weight: 400;
 }
-
+h3 {
+  @include fontSize(28);
+  color: #aaaaaa;
+}
+h4 {
+  @include fontSize(24);
+  color: #aaaaaa;
+}
+h5 {
+  @include fontSize(22);
+  color: #333333;
+}
 p {
   @include fontSize(16);
   color: #888888;
   font-weight: 400;
 }
 .header__config__lang span,
-.header__config__lang svg {
+.header__config__lang svg,
+.header__config__utilities div {
+  @include fontSize(16);
   @extend p;
+  @extend h5;
 }
+
 //  {
 //   font-size: 20px;
 //   line-height: 1.4;

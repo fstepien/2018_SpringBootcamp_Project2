@@ -1,6 +1,6 @@
 $primary: #333333;
 $contrast: #d4bd53;
-$black: #000f20;
+$secondary: #aaaaaa;
 $white: #ffffff;
 
 @mixin colors($background, $color) {
@@ -26,4 +26,19 @@ $white: #ffffff;
 
 .nowrap {
   white-space: nowrap;
+}
+.wrap60 {
+  width: 60%;
+  margin: 0 auto;
+}
+/* from https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

@@ -66,7 +66,9 @@
         & a {
           text-decoration: none;
           @extend li;
-          &.active {
+          &.active,
+          &:hover,
+          & label:hover {
             color: #888888;
             border-bottom: 2px solid $contrast;
           }
@@ -162,6 +164,7 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-end;
+    height: 100%;
 
     &__lang {
       display: flex;
@@ -211,10 +214,46 @@
       align-self: center;
       padding: 0;
 
+      position: relative;
       & li {
-        display: inline-block;
+        display: flex;
+        align-self: center;
+        list-style: none;
         &:nth-child(2) {
           margin: 0 1rem;
+        }
+        & div {
+          position: absolute;
+          display: none;
+          top: 2rem;
+          z-index: 110;
+          background: white;
+          border: rgb(231, 231, 231) 1px solid;
+        }
+        &:hover div {
+          display: block;
+        }
+      }
+      &__search {
+        & div {
+          display: block !important;
+          right: calc(100% - 25px);
+          width: 442px;
+          padding: 4rem;
+          & input[type="search"] {
+            width: 100%;
+            border: rgb(231, 231, 231) 1px solid;
+          }
+        }
+      }
+      &__account {
+        & div {
+          right: calc(0% + 3rem);
+        }
+      }
+      &__bag {
+        & div {
+          right: calc(0%);
         }
       }
     }
@@ -271,13 +310,7 @@
         & a {
           color: white;
           background: $contrast;
-          @include fontSize(18);
-          padding: 0.8rem 2.7rem;
-          line-height: 1.5;
-          line-height: 1.5;
-          display: inline-block;
-          border-radius: 20px;
-          text-decoration: none;
+
           position: absolute;
           letter-spacing: normal;
           top: 5rem;

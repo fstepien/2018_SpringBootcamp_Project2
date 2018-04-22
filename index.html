@@ -13,94 +13,252 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body>
-    <header class="header">
+<body class="body">
+
+
+    <label for="nav-drop-toggle">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <input type="checkbox" id="nav-drop-toggle">
+    <nav class="nav-drop">
+        <!-- <div class="nav-drop__close">
+            <i class="fas fa-times"></i>
+        </div> -->
+        <ul class="nav-drop__list">
+            <li>
+                <a href="#home" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#lookbook">Lookbook</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+            <li>
+                <a href="#blog">Blog</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="body-wrap">
+        <header class="header">
 
 
 
-        <div class="header__logo">
-            <img src="images/logo.png" alt="maxshop logo">
-        </div>
-        <nav class="header__nav">
-            <ul class="nav-site">
-                <li>
-                    <a href="#home" class="active">Home</a>
-                </li>
-                <li>Shop
-                    <i class="fas fa-chevron-down"></i>
-                </li>
-                <li>
-                    <a href="#lookbook">Lookbook</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-                <li>
-                    <a href="#blog">Blog</a>
-                </li>
-            </ul>
-
-        </nav>
-        <div class="header__config">
-            <div class="header__config__lang">
-                <img src="images/lang-gb.png" alt="great britain flag">
-                <span>GB</span>
-                <i class="fas fa-chevron-down"></i>
-                <ul>
+            <div class="header__logo">
+                <img src="images/logo.png" alt="maxshop logo">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav__list">
                     <li>
-                        <img src="images/lang-us.png" alt="great britain flag">
-                        <span>US</span>
+                        <a href=" #home " class="active ">Home</a>
+                    </li>
+                    <li class="header__nav__list__shop">
+                        <label for="shop-toggle">
+                            Shop
+                            <i class="fas fa-chevron-down "></i>
+                        </label>
+                        <!-- Shop
+                        <i class="fas fa-chevron-down "></i> -->
+                        <input type="checkbox" id="shop-toggle">
+                        <div class="header__nav__list__shop__dropdown">
+
+                            <div class="wrap60 header__nav__list__shop__dropdown__wrapper">
+                                <div class="header__nav__list__shop__dropdown__wrapper__item">
+                                    <div class="header__nav__list__shop__dropdown__wrapper__item__title">Clothing</div>
+                                    <ul>
+                                        <li>
+                                            <p>Shirts</p>
+                                        </li>
+                                        <li>
+                                            <p>Tops</p>
+                                        </li>
+                                        <li>
+                                            <p>Outerwear</p>
+                                        </li>
+                                        <li>
+                                            <p>Bottoms</p>
+                                        </li>
+                                        <li>
+                                            <p>Denim</p>
+                                        </li>
+                                        <li>
+                                            <p>Swim</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="header__nav__list__shop__dropdown__wrapper__item">
+                                    <div class="header__nav__list__shop__dropdown__wrapper__item__title">Hand Bag</div>
+                                    <ul>
+                                        <li>
+                                            <p>Work</p>
+                                        </li>
+                                        <li>
+                                            <p>Weekend</p>
+                                        </li>
+                                        <li>
+                                            <p>Bacpkpacks</p>
+                                        </li>
+                                        <li>
+                                            <p>Wallets</p>
+                                        </li>
+                                        <li>
+                                            <p>Work</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="header__nav__list__shop__dropdown__wrapper__item">
+                                    <div class="header__nav__list__shop__dropdown__wrapper__item__title">Shoes</div>
+                                    <ul>
+                                        <li>
+                                            <p>Sneakers</p>
+                                        </li>
+                                        <li>
+                                            <p>Casual</p>
+                                        </li>
+                                        <li>
+                                            <p>Boots</p>
+                                        </li>
+                                        <li>
+                                            <p>Shoe Care</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="header__nav__list__shop__dropdown__wrapper__item">
+                                    <div class="header__nav__list__shop__dropdown__wrapper__item__title">Accessories</div>
+                                    <ul>
+                                        <li>
+                                            <p>Sunglasses</p>
+                                        </li>
+                                        <li>
+                                            <p>Watches</p>
+                                        </li>
+                                        <li>
+                                            <p>Jewelry</p>
+                                        </li>
+                                        <li>
+                                            <p>Hats, Scarves & Gloves</p>
+                                        </li>
+                                        <li>
+                                            <p>Ties</p>
+                                        </li>
+                                        <li>
+                                            <p>Underwear & Socks</p>
+                                        </li>
+                                        <li>
+                                            <p>Grooming Products</p>
+                                        </li>
+                                        <li>
+                                            <P>Belts</P>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <label class="close-shop-toggle" for="shop-toggle">
+                                <i class="fas fa-times"></i>
+                            </label>
+                        </div>
                     </li>
                     <li>
-                        <img src="images/lang-fr.png" alt="great britain flag">
-                        <span>FR</span>
+                        <a href="#lookbook ">Lookbook</a>
                     </li>
                     <li>
-                        <img src="images/lang-de.png" alt="great britain flag">
-                        <span>DE</span>
+                        <a href="#contact ">Contact</a>
                     </li>
                     <li>
-                        <img src="images/lang-br.png" alt="great britain flag">
-                        <span>BR</span>
+                        <a href="#blog ">Blog</a>
+                    </li>
+                </ul>
+
+            </nav>
+            <div class="header__config ">
+                <div class="header__config__lang ">
+                    <img src="images/lang-gb.png " alt="great britain flag ">
+                    <span>GB</span>
+                    <i class="fas fa-chevron-down "></i>
+                    <ul>
+                        <li>
+                            <img src="images/lang-us.png " alt="great britain flag ">
+                            <span>US</span>
+                            <i></i>
+                        </li>
+                        <li>
+                            <img src="images/lang-fr.png " alt="great britain flag ">
+                            <span>FR</span>
+                            <i></i>
+                        </li>
+                        <li>
+                            <img src="images/lang-de.png " alt="great britain flag ">
+                            <span>DE</span>
+                            <i></i>
+                        </li>
+                        <li>
+                            <img src="images/lang-br.png " alt="great britain flag ">
+                            <span>BR</span>
+                            <i></i>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul class="header__config__utilities ">
+                    <li class="header__config__utilities__search">
+                        <img src="images/util-search.svg " alt="search icon ">
+                        <div>
+                            <h5>Search Now!</h5>
+                            <form>
+                                <label for="search" class="visuallyhidden">Search: </label>
+                                <input type="search" placeholder="Your serach here..." id="search">
+                                <input type="Submit" value="Search">
+                            </form>
+                        </div>
+                    </li>
+                    <li class="header__config__utilities__account">
+                        <img src="images/util-account.svg " alt="user account icon ">
+                        <div>
+                            <p>USER ACCOUNT</p>
+                            not para
+                        </div>
+                    </li>
+                    <li class="header__config__utilities__bag">
+                        <img src="images/util-bag.svg " alt="shopping bag icon ">
+                        <div>
+                            <p>SHOPPING BAG</p>
+                            not para
+                        </div>
                     </li>
                 </ul>
 
             </div>
-            <ul class="header__config__utilities">
-                <li>
-                    <img src="images/util-search.svg" alt="search icon">
-                </li>
-                <li>
-                    <img src="images/util-account.svg" alt="user account icon">
-                </li>
-                <li>
-                    <img src="images/util-bag.svg" alt="shopping bag icon">
-                </li>
-            </ul>
+            <div class="header__title ">
+                <div class="header__title__spacer "></div>
+                <div class="header__title__wrap ">
+                    <div class="header__title__wrap__date ">
+                        <h2>
+                            26/02/2016
+                        </h2>
+                    </div>
+                    <h3>Bring glamour to your wardrobe</h3>
+                    <h1 class="nowrap ">Summer
+                        <br>Collection 2016&rdquo;</h1>
+                    <div class="header__title__wrap__view-more ">
 
-        </div>
-        <div class="header__title">
-            <div class="header__title__spacer"></div>
-            <div class="header__title__wrap">
-                <div class="header__title__wrap__date">
-                    26/02/2016
-                </div>
-                <p>Bring glamour to your wardrobe</p>
-                <h1 class="nowrap">Summer
-                    <br>Collection 2016&rdquo;</h1>
-                <div class="header__title__wrap__view-more">
-                    <span>01</span>
-                    <a href="#" class="link">View More</a>
+                        <span>01
+
+                        </span>
+                        <a href="# " class="link ">View more</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="header__slider">
+            <div class="header__slider ">
 
-        </div>
+            </div>
 
-    </header>
-
+        </header>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+.link,
+input[type="submit"],
+button {
+  @include fontSize(18);
+  padding: 0.8rem 2.7rem;
+  line-height: 1.5;
+  line-height: 1.5;
+  display: inline-block;
+  border-radius: 20px;
+  text-decoration: none;
+}
