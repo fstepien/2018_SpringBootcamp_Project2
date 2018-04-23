@@ -1,0 +1,79 @@
+.products {
+  padding-top: 160px;
+  & > p {
+    @include fontSize(18);
+  }
+  &__list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(150px, 1fr) minmax(150px, 1fr)
+    );
+    grid-gap: 30px;
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      &__image {
+        position: relative;
+        & img:first-of-type {
+          width: 100%;
+        }
+        & img:nth-of-type(2) {
+          position: absolute;
+          background: #333;
+          height: 42px;
+          width: 42px;
+          text-align: center;
+          padding: 8px;
+          right: 0;
+          bottom: -10px;
+          transition: background 0.3s ease;
+        }
+        &:hover img:nth-of-type(2) {
+          background: $contrast;
+        }
+      }
+    }
+  }
+}
+.products-section {
+  position: relative;
+  //   border: solid red 1px;
+  & > .side-text {
+    color: #eeeeee;
+    @include fontSize(80);
+    font-family: "Montserrat", sans-serif;
+    // transform: rotate(-90deg);
+    position: absolute;
+    top: 150px;
+    letter-spacing: -0.7rem;
+    //easier to work with, in this case, than transform from http://labs.jensimmons.com/2017/03-004.html
+    writing-mode: vertical-rl;
+    transition: right 0.5s ease;
+    transition: left 0.5s ease;
+    &.side-text-right {
+      right: 5%;
+      transform-origin: bottom right;
+    }
+    &.side-text-left {
+      left: 5%;
+      transform-origin: bottom right;
+    }
+    @media (max-width: 670px) {
+      &.side-text-right {
+        right: 2%;
+        transition: right 0.5s ease;
+      }
+      &.side-text-left {
+        left: 2%;
+        transition: left 0.5s ease;
+      }
+    }
+    @media (max-width: 560px) {
+      display: none !important;
+    }
+  }
+}

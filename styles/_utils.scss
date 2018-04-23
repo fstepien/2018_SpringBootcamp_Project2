@@ -27,14 +27,18 @@ $white: #ffffff;
 .nowrap {
   white-space: nowrap;
 }
-.wrap60 {
-  width: 60%;
-  margin: 0 auto;
-}
 .wrap90 {
   width: 90%;
   margin: 0 auto;
 }
+.wrap60 {
+  width: 60%;
+  margin: 0 auto;
+  @media (max-width: 560px) {
+    width: 90%;
+  }
+}
+
 /* from https://www.w3.org/WAI/tutorials/forms/labels/#note-on-hiding-elements */
 .visuallyhidden {
   border: 0;

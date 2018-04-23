@@ -34,7 +34,7 @@
         width: 20px;
       }
       @media (min-width: 560px) and (max-width: 1000px) {
-        bottom: 10%;
+        bottom: 20%;
         &:before {
           display: none !important;
         }
@@ -48,7 +48,7 @@
       overflow: hidden;
       color: #333;
       background: white;
-      padding: 3px;
+      padding: 4px;
       left: -55px;
       transition: left 1s ease;
       transition: font-size 1s ease;
