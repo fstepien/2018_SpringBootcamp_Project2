@@ -1,0 +1,21 @@
+.main-footer {
+  &__top {
+    padding-top: 120px;
+    background: #333333;
+    &__wrapped {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      height: 100%;
+      &__box {
+        flex-basis: 1fr;
+        min-width: 240px;
+        height: 100px;
+      }
+    }
+  }
+  .main-footer__bottom {
+    height: 100px;
+    background: #444444;
+  }
+}

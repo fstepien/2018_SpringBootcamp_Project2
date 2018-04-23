@@ -111,6 +111,8 @@
       color: $primary;
       margin-top: 3rem;
       background: white;
+      z-index: 60;
+      position: relative;
     }
   }
   @media (max-width: 1550px) {

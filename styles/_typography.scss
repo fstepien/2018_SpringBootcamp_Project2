@@ -65,6 +65,19 @@ p {
     @include fontSize(18);
   }
 }
+.p-contrast {
+  @include fontSize(16);
+  color: $contrast;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 75px;
+}
+.p-white {
+  @include fontSize(16);
+  color: white;
+  font-weight: 400;
+}
 .header__config__lang span,
 .header__config__lang svg,
 .header__config__utilities div,

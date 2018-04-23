@@ -59,6 +59,9 @@
         &__view-more span {
           display: none !important;
         }
+        &__view-more > a {
+          top: 0 !important;
+        }
       }
     }
     &__slider {
@@ -397,6 +400,7 @@
           position: absolute;
           letter-spacing: normal;
           top: 5rem;
+          transition: top 0.5s;
           &:hover {
             color: $contrast;
             background: hsla(0, 0%, 100%, 0.685);

@@ -17,12 +17,15 @@
   &__list {
     margin-top: 50px;
     display: grid;
+    // This drops down one item at a time
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    // This code drops two at a time but is not supported in firefox
     grid-template-columns: repeat(
       auto-fit,
       minmax(150px, 1fr) minmax(150px, 1fr)
     );
     grid-gap: 30px;
-    // max-width: 300px;
+
     &__item {
       position: relative;
       display: flex;
@@ -30,11 +33,12 @@
       justify-content: space-between;
       &__image {
         // this is the div that contains the image(s)
-
         position: relative;
 
         & > img:first-of-type {
-          max-width: 100%;
+          width: 100%;
+          // max-width required for firefox not to strech to full container width
+          //   max-width: 100%;
         }
         & img:nth-of-type(2) {
           position: absolute;

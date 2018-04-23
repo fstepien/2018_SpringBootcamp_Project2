@@ -1,0 +1,50 @@
+.rethink {
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+
+  &__option {
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-content: center;
+    &__text {
+      margin: 0 auto;
+      width: 50%;
+      text-align: left !important;
+      &--first {
+        & h2,
+        & h6 {
+          color: white;
+        }
+        & h6 {
+          font-weight: 400;
+        }
+        & .link {
+          border: white solid 1px;
+          color: white;
+        }
+      }
+      &--second {
+        & h6 {
+          color: #888888;
+        }
+        & .link {
+          border: $contrast solid 1px;
+        }
+      }
+    }
+    &:first-of-type {
+      background: url("../../images/footer-1.png");
+      background-size: cover;
+    }
+
+    &:last-of-type {
+      background: url("../../images/footer-2.png");
+      background-size: cover;
+    }
+  }
+}
