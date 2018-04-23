@@ -9,11 +9,14 @@
     flex-basis: 1fr;
     position: relative;
     outline: white 5px solid;
+
     &:nth-of-type(n + 2) {
       margin-left: 60px;
     }
+    // currently inconsistency with firefox for outline-offet use with position absolute images outside of div https://bugzilla.mozilla.org/show_bug.cgi?id=687311
     &:hover {
       outline-offset: -30px;
+      -moz-outline-offset: -60px;
       transition: 0.5s;
     }
     &__tag {
