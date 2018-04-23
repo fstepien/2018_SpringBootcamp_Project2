@@ -18,7 +18,7 @@
   @media (max-width: 720px) {
     grid-template-columns: 5fr minmax(200px, 32fr) 45fr 13fr 5fr;
 
-    grid-template-rows: 100px 100px 1fr minmax(200px, 2fr);
+    grid-template-rows: 100px 100px 2fr minmax(180px, 3fr);
     grid-template-areas:
       ". logo logo logo ."
       ". nav config  config ."
@@ -60,7 +60,7 @@
           display: none !important;
         }
         &__view-more > a {
-          top: 0 !important;
+          top: 1rem !important;
         }
       }
     }
@@ -393,6 +393,7 @@
           top: 0;
           left: -24px;
           display: flex;
+          font-family: "Montserrat";
         }
         & a {
           color: white;

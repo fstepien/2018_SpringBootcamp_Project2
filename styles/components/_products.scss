@@ -19,6 +19,13 @@
     display: grid;
     // This drops down one item at a time
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    @media (max-width: 1150px) {
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(150px, 1fr) minmax(150px, 1fr)
+      );
+    }
     // This code drops two at a time but is not supported in firefox
     grid-template-columns: repeat(
       auto-fit,

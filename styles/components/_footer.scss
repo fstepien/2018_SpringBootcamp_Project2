@@ -1,21 +1,153 @@
 .main-footer {
   &__top {
-    padding-top: 120px;
+    padding-top: 86px;
     background: #333333;
     &__wrapped {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(270px, 1fr));
+      grid-gap: 30px;
+      height: 100%;
+      @media (max-width: 1800px) {
+        grid-template-columns: repeat(2, minmax(270px, 1fr));
+      }
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(1, minmax(270px, 1fr));
+      }
+      & .p-contrast {
+        padding-top: 3.4rem;
+      }
+      &__box {
+        &--contact,
+        &--newsletter {
+          & p:not(:first-of-type) {
+            color: white;
+            line-height: 3rem;
+          }
+          & form {
+            display: flex;
+            flex-flow: row npwrap;
+            justify-content: start;
+          }
+          & .newsletter-form input {
+            color: white;
+            @include fontSize(14);
+            padding: 1.2rem 0.9rem;
+            margin-bottom: 1.6rem;
+            border: 1px solid white;
+            margin-right: 1.1rem;
+            border-radius: 0;
+            background: transparent;
+            &[type="submit"]:hover {
+              color: $contrast;
+              border: 1px solid $contrast;
+            }
+          }
+        }
+        &--tags div {
+          display: flex;
+          flex-flow: row wrap;
+          & span {
+            color: white;
+            @include fontSize(14);
+            padding: 1.2rem 0.9rem;
+            margin-bottom: 1.6rem;
+            border: 1px solid white;
+            margin-right: 1.1rem;
+          }
+        }
+        &--instagram {
+          & .instagram__images {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(3, 83px);
+            &__box {
+              position: relative;
+              & > svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translatey(-50%);
+                color: white;
+                @include fontSize(18);
+                display: none;
+                z-index: 3;
+              }
+              &:hover svg {
+                display: block;
+              }
+              &:hover {
+                &:after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  background: rgba(0, 0, 0, 0.5);
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__follow-us {
+    padding-top: 86px;
+    background: #333333;
+    text-align: center;
+    & .p-contrast {
+      margin-bottom: 30px !important;
+    }
+    &__wrapped__social {
+      padding-bottom: 50px;
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-between;
-      height: 100%;
-      &__box {
-        flex-basis: 1fr;
-        min-width: 240px;
-        height: 100px;
+      justify-content: space-around;
+      & .link {
+        color: white;
+        @include fontSize(18) font-weight: 400;
+        margin-bottom: 1rem;
+        width: 16.3rem;
+        &:hover {
+          color: $contrast;
+          border: $contrast 1px solid;
+        }
       }
     }
   }
   .main-footer__bottom {
     height: 100px;
     background: #444444;
+    &__wrapped {
+      height: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: center;
+      & > p {
+        color: white;
+        align-self: center;
+      }
+      & > ul {
+        align-self: center;
+        padding: 0;
+        & > li {
+          @include fontSize(16);
+          color: white;
+          display: inline-block;
+          &:nth-of-type(n + 2) {
+            margin-left: 2rem;
+          }
+          &:nth-last-of-type(n + 2):after {
+            content: "|";
+            color: $secondary;
+            position: relative;
+            right: -1rem;
+          }
+        }
+      }
+    }
   }
 }
