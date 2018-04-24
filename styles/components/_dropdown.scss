@@ -1,5 +1,6 @@
 .body {
   .body-wrap {
+    top: 0;
     position: relative;
     transition: top 0.3s ease;
   }
@@ -18,7 +19,9 @@
     display: none;
     text-align: center;
     border-radius: 5px;
-    @media (max-width: 560px) {
+    cursor: pointer;
+    @media (max-width: 720px) {
+      // change line 31 if you change this....I should cimbine these later
       display: block;
     }
   }
@@ -26,7 +29,8 @@
   & input[id="nav-drop-toggle"] {
     display: none;
   }
-  @media (max-width: 560px) {
+  @media (max-width: 720px) {
+    // Change line 22 if you change the max width here
     & input[id="nav-drop-toggle"]:checked + .nav-drop {
       top: 0;
     }
@@ -60,11 +64,18 @@
       flex-flow: column nowrap;
       justify-content: space-between;
       text-align: center;
+      height: 100%;
+      margin: 0;
+      padding: 10px;
       & a,
       & span {
         @include fontSize(30);
         text-decoration: none;
         color: white;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $contrast;
+        }
       }
     }
   }

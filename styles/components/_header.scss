@@ -84,12 +84,9 @@
       }
     }
   }
-  // @media only screen and (min-width: 321px) {
-  //   height: 200vh;
-  // }
-  // @media only screen and (orientation: landscape) {
-  //   height: 200vh;
-  // }
+  @media (min-width: 321px) and (max-width: 800px) and (orientation: landscape) {
+    height: 200vh;
+  }
 
   &__logo {
     align-self: center;
@@ -117,11 +114,11 @@
         &:not(:first-child):not(:last-child) {
           margin: 0 1rem;
         }
-        & svg[class="fa-chevron-down"] {
+        & svg.fa-chevron-down {
           transform: translateY(4px);
           transition: transform 0.5s;
         }
-        &:hover svg[class="fa-chevron-down"] {
+        &:hover svg.fa-chevron-down {
           transform: translateY(10px);
           transition: transform 0.5s;
         }
@@ -455,6 +452,7 @@
           left: -24px;
           display: flex;
           font-family: "Montserrat";
+          z-index: 5;
         }
         & a {
           color: white;

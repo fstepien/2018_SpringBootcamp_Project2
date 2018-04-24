@@ -11,6 +11,9 @@
     flex-flow: column nowrap;
     justify-content: space-around;
     align-content: center;
+    @media (min-width: 321px) and (orientation: landscape) {
+      height: 100vh;
+    }
     &__text {
       margin: 0 auto;
       width: 50%;
@@ -48,12 +51,12 @@
       }
     }
     &:first-of-type {
-      background: url("../../images/footer-1.png");
+      background: url("../images/footer-1.png");
       background-size: cover;
     }
 
     &:last-of-type {
-      background: url("../../images/footer-2.png");
+      background: url("../images/footer-2.png");
       background-size: cover;
     }
   }

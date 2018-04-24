@@ -16,12 +16,12 @@
       background-size: cover;
       background-position: center;
       &--lookbook {
-        background: url("../../images/blog-1.png");
+        background: url("../images/blog-1.png");
 
         float: right;
       }
       &--campaign {
-        background: url("../../images/blog-2.png") no-repeat center center;
+        background: url("../images/blog-2.png") no-repeat center center;
         float: left;
         direction: rtl;
       }
