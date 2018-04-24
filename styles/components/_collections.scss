@@ -13,7 +13,7 @@
     &:nth-of-type(n + 2) {
       margin-left: 60px;
     }
-    // currently inconsistency with firefox for outline-offet use with position absolute images outside of div https://bugzilla.mozilla.org/show_bug.cgi?id=687311
+    // currently inconsistency with firefox for outline-offet use with position absolute images outside of div https://bugzilla.mozilla.org/show_bug.cgi?id=687311 (leaving offset as it is interesting could switch to div as used in lookbook)
     &:hover {
       outline-offset: -30px;
       -moz-outline-offset: -60px;

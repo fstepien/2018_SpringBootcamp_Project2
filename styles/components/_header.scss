@@ -117,11 +117,11 @@
         &:not(:first-child):not(:last-child) {
           margin: 0 1rem;
         }
-        & svg {
+        & svg[class="fa-chevron-down"] {
           transform: translateY(4px);
           transition: transform 0.5s;
         }
-        &:hover svg {
+        &:hover svg[class="fa-chevron-down"] {
           transform: translateY(10px);
           transition: transform 0.5s;
         }
@@ -176,6 +176,11 @@
                   margin: 0 !important;
                   padding-left: 75px;
                   display: block;
+
+                  &:hover p {
+                    font-weight: bold;
+                    color: $primary;
+                  }
                   & p {
                     // margin: 0;
                   }
@@ -324,11 +329,28 @@
             padding: 0;
             & li {
               margin: 1rem 0 0 0 !important;
+              &:hover {
+                font-weight: bold;
+              }
             }
           }
         }
       }
       &__bag {
+        &:after {
+          position: absolute;
+          content: "2";
+          @include fontSize(14);
+          font-weight: bold;
+          background: $contrast;
+          color: white;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          text-align: center;
+          top: -4px;
+          right: -8px;
+        }
         & > div {
           // display: block !important;
           width: 442px;

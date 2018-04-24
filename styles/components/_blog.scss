@@ -2,7 +2,7 @@
   padding-top: 160px;
   &__list {
     &__text {
-      width: 430px;
+      //   max-width: 430px;
       &--lookbook {
         float: left;
       }
@@ -13,23 +13,31 @@
     &__img {
       width: 660px;
       height: 391px;
+      background-size: cover;
+      background-position: center;
       &--lookbook {
         background: url("../../images/blog-1.png");
+
         float: right;
       }
       &--campaign {
-        background: url("../../images/blog-2.png");
+        background: url("../../images/blog-2.png") no-repeat center center;
         float: left;
         direction: rtl;
+      }
+      @media (max-width: 1320px) {
+        width: 50vw;
+        max-height: 100vh;
       }
     }
     @supports (display: grid) {
       display: grid;
-      grid-template-columns: 5% minmax(200px, 3fr) minmax(200px, 3fr) 5%;
+      grid-template-columns: 5% minmax(150px, 3fr) minmax(150px, 3fr) 5%;
       grid-template-rows: 1fr 80px 1fr;
       &__text {
         z-index: 3;
         margin-top: 10rem;
+
         &--lookbook {
           grid-column: 2 / 3;
           grid-row: 1 / 2;
@@ -42,6 +50,9 @@
           direction: rtl;
           justify-self: end;
           margin-top: 17rem;
+          @media (max-width: 560px) {
+            margin-top: 14px;
+          }
         }
       }
       &__img {

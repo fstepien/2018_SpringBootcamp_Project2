@@ -100,6 +100,8 @@
       font-size: 1.56vw;
       position: relative;
       z-index: 10;
+      //helps show text over image, look into new breakpoint to avoid this
+      text-shadow: 0px 0px 4px white;
       //   direction will allow overflow to left
       direction: rtl;
       font-weight: 400;
@@ -108,6 +110,7 @@
     & > p {
       margin: 0;
       direction: rtl;
+      z-index: 10;
     }
     & > .link {
       border: $contrast 1px solid;
