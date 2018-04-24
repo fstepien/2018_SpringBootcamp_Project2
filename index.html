@@ -15,7 +15,7 @@
 
 <body class="body">
 
-
+    <a href="#maincontent" class="skip-link">Skip to main content.</a>
     <label for="nav-drop-toggle">
         <i class="fas fa-bars"></i>
     </label>
@@ -53,7 +53,7 @@
             <nav class="header__nav">
                 <ul class="header__nav__list">
                     <li>
-                        <a href="#collections" class="active ">Home</a>
+                        <a href="#maincontent" class="active ">Home</a>
                     </li>
                     <li class="header__nav__list__shop">
                         <label for="shop-toggle">
@@ -307,24 +307,29 @@
                     </div>
                 </div>
             </div>
-
             <div class="header__slider ">
-                <div class=" header__slider__action header__slider__action--previous">
+                <label class=" header__slider__action header__slider__action--previous" for="slider-scroll-previous">
                     <p>
 
                         <i class="fas fa-chevron-left"></i>
                     </p>
-                </div>
-                <div class="header__slider__action header__slider__action--next">
+                </label>
+                <label class="header__slider__action header__slider__action--next" for="slider-scroll-next">
                     <p>
 
                         <i class="fas fa-chevron-right"></i>
                     </p>
-                </div>
+                </label>
             </div>
-
+            <form>
+                <input type="radio" name="scroll-radio" id="slider-scroll-previous" class="header__slider__checkbox">
+                <input type="radio" name="scroll-radio" id="slider-scroll-next" class="header__slider__checkbox">
+                <img src="images/sticky-1.png" alt="page scroll indicator top" class="header__scroll header__scroll--1">
+                <img src="images/sticky-2.png" alt="page scroll indicator top" class=" header__scroll header__scroll--2">
+                <img src="images/sticky-3.png" alt="page scroll indicator top" class="header__scroll header__scroll--3">
+            </form>
         </header>
-        <section id="collections" class="collections wrap90">
+        <section id="maincontent" class="collections wrap90">
             <div class="collections__item colelctions--accessories">
                 <a href="#blog">
                     <p class="collections__item__tag">Diverse Products.</p>
@@ -455,6 +460,9 @@
                     <br> Spring/Summer 2018</h2>
                 <p class="nowrap">18 June 2018 / Salvatore Campain</p>
                 <a href="#" class="link">Get the Look!</a>
+            </div>
+            <div class="lookbook__by">
+                <p>BY MARK JACOB</p>
             </div>
 
         </section>

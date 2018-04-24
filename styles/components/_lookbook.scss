@@ -9,7 +9,7 @@
   grid-template-areas:
     "lookbook-slider ."
     "lookbook-slider lookbook-info"
-    "lookbook-slider .";
+    "lookbook-slider by-mark";
   &__slider {
     grid-area: lookbook-slider;
     background: url("../images/main-image-2.png");
@@ -142,6 +142,26 @@
     }
     & .link {
       margin-top: 1rem;
+    }
+  }
+  &__by {
+    grid-area: by-mark;
+    position: relative;
+    & > p {
+      @include fontSize(15);
+      font-family: Roboto;
+      color: #444444;
+      font-weight: 400;
+      transform-origin: top left;
+      transform: rotate(-90deg);
+      position: absolute;
+      left: 0;
+      bottom: -18px;
+      padding: 0;
+      margin: 0;
+    }
+    @media (max-width: 1030px) {
+      display: none;
     }
   }
 }
