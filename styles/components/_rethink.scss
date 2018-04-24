@@ -26,6 +26,11 @@
         & .link {
           border: white solid 1px;
           color: white;
+          &:hover {
+            color: $contrast;
+            background: rgba(0, 0, 0, 0.541);
+            border-color: $contrast;
+          }
         }
       }
       &--second {
@@ -34,6 +39,11 @@
         }
         & .link {
           border: $contrast solid 1px;
+          color: black;
+          &:hover {
+            color: $contrast;
+            background: rgba(0, 0, 0, 0.541);
+          }
         }
       }
     }

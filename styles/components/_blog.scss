@@ -1,0 +1,65 @@
+.blog {
+  padding-top: 160px;
+  &__list {
+    &__text {
+      width: 430px;
+      &--lookbook {
+        float: left;
+      }
+      &--campaign {
+        float: right;
+      }
+    }
+    &__img {
+      width: 660px;
+      height: 391px;
+      &--lookbook {
+        background: url("../../images/blog-1.png");
+        float: right;
+      }
+      &--campaign {
+        background: url("../../images/blog-2.png");
+        float: left;
+        direction: rtl;
+      }
+    }
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: 5% minmax(200px, 3fr) minmax(200px, 3fr) 5%;
+      grid-template-rows: 1fr 80px 1fr;
+      &__text {
+        z-index: 3;
+        margin-top: 10rem;
+        &--lookbook {
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+          float: none;
+        }
+        &--campaign {
+          grid-area: text-camp;
+          grid-column: -2 / -3;
+          grid-row: 2 / 3;
+          direction: rtl;
+          justify-self: end;
+          margin-top: 17rem;
+        }
+      }
+      &__img {
+        &--lookbook {
+          grid-column: -1 / -3;
+          grid-row: 1 / 3;
+          float: none;
+          z-index: 2;
+          text-align: right;
+          justify-self: end;
+        }
+        &--campaign {
+          grid-column-start: 1;
+          grid-column-end: span 1;
+          grid-row: 2 / 3;
+          float: none;
+        }
+      }
+    }
+  }
+}

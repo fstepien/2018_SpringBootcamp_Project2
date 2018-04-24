@@ -18,7 +18,7 @@
   @media (max-width: 720px) {
     grid-template-columns: 5fr minmax(200px, 32fr) 45fr 13fr 5fr;
 
-    grid-template-rows: 100px 100px 2fr minmax(180px, 3fr);
+    grid-template-rows: 100px 100px minmax(175px, 1fr) minmax(180px, 3fr);
     grid-template-areas:
       ". logo logo logo ."
       ". nav config  config ."
@@ -66,28 +66,29 @@
     }
     &__slider {
       flex-shrink: 2;
+
+      &__action {
+        background: white;
+        width: 30px !important;
+        height: 30px !important;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        &--previous {
+          right: 30px !important;
+        }
+        & p {
+          position: relative;
+          top: calc(50% - 22px) !important;
+        }
+      }
     }
   }
-  // @media (max-width: 560px) {
-  //   grid-template-rows: 100px 100px 1fr 1fr;
-  //   grid-template-areas:
-  //     ". logo logo logo ."
-  //     ". nav config  config ."
-  //     ". title title title ."
-  //     " . slider slider slider .";
-  // &__nav {
-  //   // position: relative;
-  //   // left: -200%;
-  //   & > ul > li:not(:nth-of-type(2)) {
-  //     display: none;
-  //   }
-  //   & .header__nav__list__shop__dropdown {
-  //     height: 600px;
-  //   }
+  // @media only screen and (min-width: 321px) {
+  //   height: 200vh;
   // }
-  // &__config {
-  //   justify-content: flex-end;
-  // }
+  // @media only screen and (orientation: landscape) {
+  //   height: 200vh;
   // }
 
   &__logo {
@@ -116,12 +117,19 @@
         &:not(:first-child):not(:last-child) {
           margin: 0 1rem;
         }
+        & svg {
+          transform: translateY(4px);
+          transition: transform 0.5s;
+        }
+        &:hover svg {
+          transform: translateY(10px);
+          transition: transform 0.5s;
+        }
         & a {
           text-decoration: none;
           @extend li;
           &.active,
-          &:hover,
-          & label:hover {
+          &:hover {
             color: #888888;
             border-bottom: 2px solid $contrast;
           }
@@ -275,7 +283,7 @@
         &:nth-child(2) {
           margin: 0 1rem;
         }
-        & div {
+        & > div {
           position: absolute;
           display: none;
           top: 2rem;
@@ -321,11 +329,12 @@
         }
       }
       &__bag {
-        & div {
+        & > div {
           // display: block !important;
           width: 442px;
           padding: 4rem;
           right: calc(0%);
+
           & a {
             color: white;
             background: #333;
@@ -335,6 +344,36 @@
               background: $contrast;
               transition: 0.3s;
             }
+          }
+          .header__config__utilities__bag__item {
+            // Needs !important so that it does not display block on hover
+            display: flex !important;
+            flex-flow: row nowrap;
+            justify-content: start;
+            margin-bottom: 2rem;
+            &__text {
+              margin-left: 4rem;
+              & p:not(:last-of-type) {
+                margin: 0;
+                &:first-of-type {
+                  color: #555555;
+                }
+              }
+            }
+            &__image {
+              width: 100px;
+
+              & img {
+                width: 100%;
+              }
+            }
+          }
+          .header__config__utilities__bag__total {
+            // Needs !important so that it does not display block on hover
+            display: flex !important;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            margin-bottom: 1rem;
           }
         }
       }
