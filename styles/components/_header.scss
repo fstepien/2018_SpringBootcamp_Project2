@@ -9,7 +9,7 @@
   grid-template-areas:
     ". logo nav config ."
     ". title slider slider slider";
-  @media (max-width: 1175px) {
+  @media (max-width: 1195px) {
     grid-template-rows: 100px 100px 1fr;
     grid-template-areas:
       ". logo config config ."
@@ -492,7 +492,6 @@
       }
       &:hover p {
         color: $contrast;
-        transform: scale(1.2);
       }
       &--previous {
         right: 87px;
@@ -506,6 +505,38 @@
     }
   }
   // SCROLL INDICATOR SECTION
+
+  input[id="slider-scroll-previous"]:checked
+    + input[id="slider-scroll-next"]
+    + .header__scroll--1 {
+    display: block;
+  }
+  input[id="slider-scroll-previous"]:checked
+    + input[id="slider-scroll-next"]
+    + .header__scroll--1
+    + .header__scroll--2,
+  input[id="slider-scroll-previous"]:checked
+    + input[id="slider-scroll-next"]
+    + .header__scroll--1
+    + .header__scroll--2
+    + .header__scroll--3 {
+    display: none;
+  }
+  input[id="slider-scroll-next"]:checked
+    + .header__scroll--1
+    + .header__scroll--2
+    + .header__scroll--3 {
+    display: block;
+  }
+  input[id="slider-scroll-next"]:checked
+    + .header__scroll--1
+    + .header__scroll--2,
+  input[id="slider-scroll-next"]:checked
+    + .header__scroll--1
+    + .header__scroll--2 {
+    display: none;
+  }
+
   &__scroll {
     position: absolute;
     bottom: 20px;
@@ -515,37 +546,7 @@
       display: none;
     }
     @media (max-width: 720px) {
-      display: none;
+      display: none !important;
     }
   }
-}
-input[id="slider-scroll-previous"]:checked
-  + input[id="slider-scroll-next"]
-  + .header__scroll--1 {
-  display: block !important;
-}
-input[id="slider-scroll-previous"]:checked
-  + input[id="slider-scroll-next"]
-  + .header__scroll--1
-  + .header__scroll--2,
-input[id="slider-scroll-previous"]:checked
-  + input[id="slider-scroll-next"]
-  + .header__scroll--1
-  + .header__scroll--2
-  + .header__scroll--3 {
-  display: none;
-}
-input[id="slider-scroll-next"]:checked
-  + .header__scroll--1
-  + .header__scroll--2
-  + .header__scroll--3 {
-  display: block;
-}
-input[id="slider-scroll-next"]:checked
-  + .header__scroll--1
-  + .header__scroll--2,
-input[id="slider-scroll-next"]:checked
-  + .header__scroll--1
-  + .header__scroll--2 {
-  display: none;
 }

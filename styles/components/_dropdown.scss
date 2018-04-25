@@ -20,6 +20,9 @@
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    & svg {
+      padding-bottom: 2px;
+    }
     @media (max-width: 720px) {
       // change line 31 if you change this....I should cimbine these later
       display: block;
