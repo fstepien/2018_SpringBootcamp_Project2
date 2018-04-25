@@ -20,13 +20,13 @@
 
 ![](http://maxshop.filipstepien.com/readme/maxshop-1.png)
 
-###### HTML/CSS Dropdowns
+#### HTML/CSS Dropdowns
 
 Responsive Design with click and hover drop downs using CSS and HTML Only
 
 ![](http://maxshop.filipstepien.com/readme/1920.gif)
 
-###### CSS GRID - Combining Repeat, Auto-Fit and MinMax 
+#### CSS GRID - Combining Repeat, Auto-Fit and MinMax 
 
 `grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) minmax(150px, 1fr));`
 
@@ -47,7 +47,7 @@ Maybe @CodingExon or @rachelandrew know?
 
 ![](http://maxshop.filipstepien.com/readme/maxshop-2.png)
 
-###### Browser Outline Implementation
+#### Browser Outline Implementation
 
 `outline: white 5px solid;`
 
