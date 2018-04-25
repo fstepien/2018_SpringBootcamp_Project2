@@ -15,8 +15,12 @@
       height: 391px;
       background-size: cover;
       background-position: center;
+
       &--lookbook {
-        background: url("../images/blog-1.png");
+        background: url("../images/blog-1-crop.png") center center;
+        background-size: cover;
+        margin: 24px;
+        outline: white 24px solid;
 
         float: right;
       }
