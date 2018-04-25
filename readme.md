@@ -20,6 +20,8 @@
 
 ![](http://maxshop.filipstepien.com/readme/maxshop-1.png)
 
+### Notes:
+
 #### HTML/CSS Dropdowns
 
 Responsive Design with click and hover drop downs using CSS and HTML Only
