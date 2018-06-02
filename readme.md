@@ -58,3 +58,9 @@ Chrome, Safari, and Edge place the outline on the edge of the parent div, while 
 [More Details available at https://bugzilla.mozilla.org/show_bug.cgi?id=687311](https://bugzilla.mozilla.org/show_bug.cgi?id=687311)
 
 ![](http://maxshop.filipstepien.com/readme/maxshop-3.png)
+
+![](https://meta.filipstepien.com/maxshop.browsertesting.jpg)
+
+#### CSS DROP DOWNS
+
+The drop downs are all created in HTML / CSS with either hover pseudo elements or 

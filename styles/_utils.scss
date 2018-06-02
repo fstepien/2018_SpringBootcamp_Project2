@@ -62,3 +62,9 @@ $white: #ffffff;
 .skip-link:focus {
   left: 0;
 }
+      & input[id="shop-toggle"] {
+        display: none;
+      }
+      & input[id="shop-toggle"]:checked + .header__nav__list__shop__dropdown {
+        display: block !important;
+      }
