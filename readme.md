@@ -24,7 +24,7 @@
 
 #### HTML/CSS Dropdowns
 
-Responsive Design with click and hover drop downs using CSS and HTML Only
+Responsive Design with click and hover drop downs using CSS and HTML Only. The drop downs are all created with either hover states, pseudo elements and/or inputs (checkboxes/radio buttons).
 
 ![](http://maxshop.filipstepien.com/readme/1920.gif)
 
@@ -59,8 +59,9 @@ Chrome, Safari, and Edge place the outline on the edge of the parent div, while 
 
 ![](http://maxshop.filipstepien.com/readme/maxshop-3.png)
 
+#### Browser Testing :computer: :iphone: :tv: :computer:
+
 ![](https://meta.filipstepien.com/maxshop.browsertesting.jpg)
 
-#### CSS DROP DOWNS
 
-The drop downs are all created in HTML / CSS with either hover pseudo elements or 
+
