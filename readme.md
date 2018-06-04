@@ -2,25 +2,12 @@
 
 [Live Link - maxshop.filipstepien.com](http://maxshop.filipstepien.com)
 
-+ All click and hover drop downs in CSS and HTML only
-+ Use a wrapper to constrain content on large displays
-+ Use external .css files
-+ box-sizing:border-box;
-+ CSS Normalize
-+ Floats and the proper use of .clearfix
-+ Semantic HTML elements (header, footer, section)
-+ Google web fonts
-+ Relative positioning/absolute positioning
-+ Background images
-+ Links within the page
-+ Icons made with icon fonts/css rather than PNG
-+ Creative use of Borders and border radius
-+ CSS3 animations 
-+ Tested in Chrome, Firefox, Edge and Safari, Android Tablet, Android Mobile
+### Lessons Learned:
+
 
 ![](http://maxshop.filipstepien.com/readme/maxshop-1.png)
 
-### Notes:
+
 
 #### HTML/CSS Dropdowns
 
@@ -60,6 +47,8 @@ Chrome, Safari, and Edge place the outline on the edge of the parent div, while 
 ![](http://maxshop.filipstepien.com/readme/maxshop-3.png)
 
 #### Browser Testing :computer: :iphone: :tv: :computer:
+
++ Tested in Chrome, Firefox, Edge and Safari, Android Tablet, Android Mobile
 
 ![](https://meta.filipstepien.com/maxshop.browsertesting.jpg)
 
